@@ -1,0 +1,650 @@
+/* =========================
+   HOME / INÍCIO — Estilos locais
+   ========================= */
+
+/* ---------- HERO ---------- */
+#hero {
+  position: relative;
+  min-height: 90vh;
+  display: grid;
+  align-items: end;
+  color: #fff;
+  overflow: hidden;
+}
+.hero__slides {
+  position: absolute;
+  inset: 0;
+}
+.hero__slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity .8s ease;
+}
+.hero__slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(.78);
+}
+.hero__slide.is-active { opacity: 1 }
+.hero__content {
+  position: relative;
+  z-index: 1;
+  padding: 0 0 400px;
+}
+.hero__card {
+  max-width: min(560px, 92vw);
+  margin: 0 auto;
+  background: linear-gradient(180deg, rgba(255,255,255,.20), rgba(255,255,255,.10));
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,.28);
+  border-radius: 18px;
+  padding: 14px 18px;
+  color: #0b1530;
+  box-shadow: var(--shadow-lg);
+  text-align: center;
+}
+.hero__card h1 {
+  font-family: "Exo 2", sans-serif;
+  font-weight: 900;
+  margin: 0 0 6px;
+  color: #fff;
+  text-shadow: 0 2px 18px rgba(0,0,0,.35);
+}
+.hero__card p {
+  margin: 6px 0 10px;
+  color: #e9eef7;
+  text-align: center;
+}
+.hero__actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.hero__actions .btn {
+  border-radius: 12px;
+  padding: 9px 12px;
+}
+
+/* ---------- BOTÕES ---------- */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: .75rem 1.25rem;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(90deg,#0b1530,#1e3a8a);
+  color: #fff;
+  font-weight: 700;
+  font-family: "Exo 2", sans-serif;
+  box-shadow: 0 0 12px rgba(30,58,138,.4);
+  transition: all .3s ease;
+  cursor: pointer;
+  text-decoration: none;
+  justify-content:center;
+}
+.btn-primary:hover {
+  background: linear-gradient(90deg,#1e3a8a,#0b1530);
+  box-shadow: 0 0 16px rgba(30,58,138,.6);
+  transform: translateY(-2px);
+}
+
+/* ---------- GRIDs ---------- */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: center;
+}
+.container .grid-2 > * { min-width: 0 }
+
+/* ---------- SLIDERS (BV / HIST) ---------- */
+.bv-slider,
+.hist-slider {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  min-height: 300px;
+}
+.bv-slider img,
+.hist-slider img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity .7s ease;
+}
+.bv-slider img.is-active,
+.hist-slider img.is-active { opacity: 1 }
+
+/* ---------- BEM-VINDO ---------- */
+.bv-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: 1.1fr .9fr;
+  align-items: stretch;
+}
+.bv-cards { display: grid; gap: 12px }
+.card { border-radius: 14px }
+.card--soft {
+  background: linear-gradient(180deg,rgba(12,25,46,.50),rgba(12,25,46,.35));
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255,255,255,.16);
+  color: #fff;
+  padding: 14px;
+  box-shadow: var(--shadow-md);
+}
+.card--soft p {
+  margin: 0;
+  line-height: 1.65;
+  text-align: justify;
+}
+
+/* ---------- HISTÓRIA ---------- */
+.hist-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+}
+.hist-card {
+  border: 1px solid var(--ring);
+  border-radius: 14px;
+  padding: 14px;
+  background: #fff;
+}
+.hist-card h3 {
+  font-family: "Exo 2", sans-serif;
+  color: var(--brand-800);
+  margin: 0 0 6px;
+  text-align: center;
+}
+.hist-card p { text-align: justify }
+.hist-more { margin-top: 8px; text-align: center }
+
+/* ===== Ajustes Infraestrutura ===== */
+.infra-carousel {
+  display: flex;
+  gap: 16px;
+  overflow: hidden;
+}
+
+.infra-card {
+  flex: 0 0 calc(32% - 10px); /* 3 cards no desktop */
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,.18);
+  display: flex;
+  flex-direction: column;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.infra-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.infra-card h3 {
+  font-family: "Exo 2", sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin: 12px 16px 6px;
+  color: #0b1530;
+}
+
+.infra-card p {
+  flex: 1;
+  font-size: .9rem;
+  margin: 0 16px 16px;
+  color: #333;
+  line-height: 1.45;
+}
+
+.infra-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,.25);
+}
+
+/* Responsivo */
+@media (max-width:1024px) {
+  .infra-card { flex: 0 0 calc(48% - 10px); } /* 2 no tablet */
+}
+@media (max-width:768px) {
+  .infra-card { flex: 0 0 100%; } /* 1 no mobile */
+}
+
+
+/* ---------------- CONTATO (GRID + CELULAR) ---------------- */
+.contact-grid {
+  display: grid;
+  gap: clamp(20px,3vw,28px);
+  align-items: start;
+}
+.contact-3col { grid-template-columns: 1.05fr .95fr auto }
+
+.contact-card {
+  grid-column: 1 / span 2;
+  background: rgba(255,255,255,.92);
+  border: 2px solid #0b1530;
+  border-radius: 24px;
+  padding: clamp(20px,2.5vw,28px);
+  box-shadow: 0 0 10px rgba(59,130,246,.25);
+}
+.contact-card__grid {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: clamp(16px,2vw,24px);
+  align-items: start;
+}
+
+/* Campos */
+.field { width: 100%; padding: 1rem; border-radius: 16px }
+.field--soft {
+  background: rgba(232,241,255,.28);
+  border: 2px solid #0b1530;
+  transition: all .3s ease;
+}
+.field--soft:focus,
+.field--soft:hover {
+  border-color: #1e3a8a;
+  box-shadow: 0 0 6px #3b82f6;
+  background: #fff;
+  outline: none;
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.contact-form .grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.contact-form textarea { min-height: 140px; resize: none }
+/* Infos */
+.contact-info {
+  padding: 18px;
+  border-radius: 16px;
+  background: rgba(232,241,255,.28);
+  border: 2px solid #0b1530;
+}
+.contact-info--compact ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+.contact-info--compact li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+.contact-info--compact li i {
+  color: var(--c-blue-primary);
+  width: 18px;
+  text-align: center;
+  margin-top: 2px;
+}
+
+/* Telefone mockup */
+.phone-col { display: flex; justify-content: center } /* centralizado */
+.phone-wrap { position: relative; width: var(--phone-w,225px) }
+.phone-img {
+  width: 100%;
+  border-radius: 22px;
+  box-shadow: 0 14px 32px rgba(0,0,0,.18);
+}
+.phone-overlay {
+  position: absolute;
+  inset: 11% 11% 12%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  border-radius: 14px;
+  background: none !important;
+}
+.phone-overlay::before { content: none !important }
+.phone-logo { width: min(78px,42%); margin-bottom: 8px }
+.phone-caption {
+  font-weight: 700;
+  font-size: .85rem;
+  line-height: 1.25;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 1px 8px rgba(0,0,0,.4);
+  margin-top: 10px;
+}
+.chips--inphone {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  margin-top: 10px;
+}
+.chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: .6rem .9rem;
+  border-radius: 999px;
+  border: 1.5px solid rgba(255,255,255,.7);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  width: 90%;
+}
+.chip.inphone { background: transparent; backdrop-filter: blur(2px) }
+.chip.inphone i { width: 18px; text-align: center }
+.chip span { flex: 1; text-align: center }
+.chip.inphone.insta { margin-top: 25px }
+.chip.inphone.face  { margin-top: 5px }
+.chip.inphone.insta:hover {
+  background: linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4);
+  border-color: #fff;
+}
+.chip.inphone.face:hover {
+  background: #1877f2;
+  border-color: #1877f2;
+}
+
+/* Títulos Contato */
+#contato .section__head h2 {
+  font-family: "Exo 2",sans-serif;
+  font-weight: 800;
+  font-size: clamp(2rem,3.2vw,3rem);
+  line-height: 1.15;
+  color: #0b1530;
+  text-align: center;
+  margin: 0 0 .4rem 0;
+}
+#contato .section__head p {
+  font-family: var(--ff-body, "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif);
+  font-size: 1rem;
+  color: var(--text-light);
+  text-align: center;
+  margin: 0 0 1rem 0;
+}
+#contato .section__head em { display: none !important }
+
+/* ---------- MAPA ---------- */
+.map-card {
+  max-width: var(--container);
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid var(--ring);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+.map-card iframe { display: block; width: 100%; height: 380px }
+
+/* ---------- COMO CHEGAR ---------- */
+#como-chegar .section__head h2 {
+  font-family: "Exo 2", sans-serif;
+  font-weight: 800;
+  font-size: clamp(2rem, 3.2vw, 3rem);
+  line-height: 1.15;
+  color: #fff;
+  text-align: center;
+  margin: 0 0 .4rem 0;
+}
+#como-chegar .section__head p {
+  font-family: var(--ff-body, "Inter", system-ui, Segoe UI, Roboto, Arial, sans-serif);
+  font-size: 1.2rem;
+  font-weight:bold;
+  color: #f1f1f1;
+  text-align: center;
+  margin: 0 0 1.5rem 0;
+}
+#como-chegar .section__underline { background: #fff }
+#como-chegar .map-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+  overflow: hidden;
+}
+/* frase pré-rodapé dentro da seção azul */
+#como-chegar #frase-pre-rodape {
+  color: #fff;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* cor forçada para links “aqui” sobre azul */
+.link-on-blue { color: #fff !important; text-decoration: underline }
+
+/* =========================================================
+   NOVAS SEÇÕES
+   ========================================================= */
+
+/* Layout novas seções */
+#simulador .grid-2,
+#visita .grid-2,
+#voo-passeio .grid-2 {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: 24px;
+  align-items: center;
+}
+
+/* ---------------- SIMULADOR ---------------- */
+#simulador .vcard {
+  background: #fff;
+  border: 1px solid var(--ring);
+  border-radius: 14px;
+  padding: 18px;
+  color: var(--text);
+  box-shadow: var(--shadow-sm);
+  line-height: 1.7;
+}
+#simulador .vcard--scroll {
+  max-height: 500px;
+  overflow-y: auto;
+  padding-right: 16px;
+}
+#simulador .vcard--scroll h3 {
+  margin: 16px 0 8px;
+  font-family: "Exo 2",sans-serif;
+  font-weight: 800;
+  color: var(--brand-700);
+}
+#simulador .vcard--scroll ul { padding-left: 20px; margin: 0 0 14px 0 }
+#simulador .vcard--scroll li { margin-bottom: 6px }
+#simulador .slider {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  min-height: 500px;
+  background: #000;
+}
+#simulador .slider img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity .7s ease;
+}
+#simulador .slider img.is-active { opacity: 1 }
+
+/* ---------------- VISITA ---------------- */
+#visita .slider {
+  min-height: 320px;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  background: #000;
+}
+#visita .slider img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity .7s ease;
+}
+#visita .slider img.is-active { opacity: 1 }
+#visita .vcard-text {
+  color: #fff;
+  line-height: 1.7;
+}
+#visita .vcard-text h3 {
+  margin: 0 0 8px;
+  font-family: "Exo 2",sans-serif;
+  font-weight: 800;
+  color: #fff;
+}
+#visita .vcard-text p {
+  margin: 0 0 14px;
+  text-align: justify;
+}
+
+/* ---------------- VOO DE PASSEIO ---------------- */
+#voo-passeio .vcard {
+  background: #fff;
+  border: 1px solid var(--ring);
+  border-radius: 14px;
+  padding: 18px;
+  color: var(--text);
+  box-shadow: var(--shadow-sm);
+  line-height: 1.7;
+}
+#voo-passeio .vcard--scroll {
+  max-height: 500px;
+  overflow-y: auto;
+  padding-right: 16px;
+}
+#voo-passeio .vcard h3 {
+  margin: 16px 0 8px;
+  font-family: "Exo 2",sans-serif;
+  font-weight: 800;
+  color: var(--brand-700);
+}
+#voo-passeio .slider {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  min-height: 500px;
+  background: #000;
+}
+#voo-passeio .slider img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity .7s ease;
+}
+#voo-passeio .slider img.is-active { opacity: 1 }
+
+/* ---------------- SEJA UM PILOTO ---------------- */
+#piloto .vcard--scroll {
+  max-height: 500px;
+  overflow-y: auto;
+  padding-right: 16px;
+  color: #fff;
+  line-height: 1.7;
+}
+#piloto .vcard--scroll h3 {
+  margin: 16px 0 8px;
+  font-family: "Exo 2",sans-serif;
+  font-weight: 800;
+  color: #fff;
+}
+#piloto .vcard--scroll ul { padding-left: 20px; margin: 0 0 14px 0 }
+#piloto .vcard--scroll li { margin-bottom: 6px }
+#piloto .slider {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  min-height: 500px;
+  background: #000;
+}
+#piloto .slider img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity .7s ease;
+}
+#piloto .slider img.is-active { opacity: 1 }
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+@media (max-width:1200px) {
+  .bv-grid { grid-template-columns: 1fr }
+}
+@media (max-width:1024px) {
+  .grid-2,.hist-grid,.infra-grid { grid-template-columns: 1fr }
+  #simulador .grid-2,
+  #visita .grid-2,
+  #voo-passeio .grid-2 { grid-template-columns: 1fr }
+  .contact-grid { grid-template-columns: 1fr; justify-content: center }
+  .contact-card__grid { grid-template-columns: 1fr }
+  .hero__card { margin: 0 12px }
+  #simulador .vcard--scroll { max-height: none; overflow: visible }
+  #simulador .slider { min-height: 300px }
+  #visita .slider { min-height: 220px }
+  .infra-carousel img { width: 220px; height: 160px }
+}
+@media (max-width:768px) {
+  .hero__content { padding-bottom: 260px }
+  .bv-slider,.hist-slider,
+  #simulador .slider,
+  #visita .slider,
+  #voo-passeio .slider { min-height: 220px }
+  .chip { width: 100% }
+  /* reduzir ícones flutuantes */
+  .float-whatsapp,
+  .float-top { width: 42px !important; height: 42px !important }
+}
+#type-quote {
+  display: flex;
+  justify-content: center;  /* centraliza horizontalmente */
+  align-items: center;      /* garante alinhamento vertical */
+  margin-top: 32px;
+  margin-bottom: 28px;
+  font-size: 1.15rem;
+  font-style: italic;
+  font-weight: bold;
+  color: #0b1530;
+  width: 100%;
+  text-align: center;
+}
+
+#type-quote .typing-cursor {
+  margin-left: 4px; /* dá um respiro depois do texto */
+}
+@media (max-width: 768px) {
+  .infra-carousel img,
+  .slider img {
+    object-fit: contain;   /* mostra imagem inteira */
+    width: 100%;
+    height: auto;
+  }
+  .infra-carousel {
+    overflow-x: auto;  /* permite scroll lateral se precisar */
+  }
+}

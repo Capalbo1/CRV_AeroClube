@@ -1,0 +1,241 @@
+/* ===== HERO ===== */
+#vooavela-topo {
+  text-align: center;
+  padding: 80px 20px 40px;
+}
+#vooavela-topo h2 {
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: #0b1530;
+  margin-bottom: 10px;
+}
+#vooavela-topo p {
+  color: var(--text-light);
+  font-size: 1.1rem;
+}
+
+/* ===== SEÇÕES ===== */
+.vooavela-secao {
+  padding: 60px 20px;
+}
+.vooavela-secao.bg-blue {
+  background: #0b1530;
+  color: #fff;
+}
+.vooavela-secao .section__head {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.vooavela-secao .section__head p {
+  text-align: center;       /* corrigido */
+  color: #d9e6ff;           /* subtítulo azul claro */
+}
+.vooavela-secao h2 {
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+.vooavela-secao p {
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+/* Links dentro de seções azuis */
+.vooavela-secao.bg-blue a {
+  color: #fff;
+  text-decoration: underline;
+}
+.vooavela-secao.bg-blue a:hover {
+  color: #4da3ff;
+}
+
+/* ===== CONTEÚDO ===== */
+.vooavela__content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.vooavela__text {
+  flex: 1 1 500px;
+  max-height: 320px; /* altura menor */
+  overflow-y: auto;
+  background: #fff;
+  color: #0b1530;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.bg-blue .vooavela__text {
+  background: #0b1530;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(255,255,255,0.1);
+}
+.vooavela__text h3 {
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin-top: 15px;
+  margin-bottom: 8px;
+}
+.vooavela__img {
+  flex: 1 1 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== SLIDER (padrão da home) ===== */
+.slider {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.slider img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+.slider img.is-active {
+  opacity: 1;
+}
+
+/* ===== ANIMAÇÕES ===== */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+  .vooavela__content {
+    flex-direction: column;
+  }
+  .vooavela__text, .vooavela__img {
+    flex: 1 1 100%;
+    max-height: none;
+    overflow: visible;
+  }
+  .slider {
+    height: 220px; /* menor no mobile */
+  }
+}
+
+/* ===== WIDGET DO CLIMA ===== */
+/* === Widget de Clima (customizado) === */
+.weather-widget {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 260px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  background: url("../img/imgvoovela22.png") center/cover no-repeat;
+}
+
+/* Overlay escuro para contraste */
+.weather-widget {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: url("../img/imgvoovela22.png") center/cover no-repeat;
+  color: #fff;
+}
+
+.weather-widget::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 0;
+}
+
+.weather-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.weather-content h3 {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.weather-main {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  margin-bottom: .5rem;
+}
+
+.weather-main img {
+  width: 60px;
+  height: 60px;
+}
+
+.weather-main .temp {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.weather-main .desc {
+  font-size: 1rem;
+  text-transform: capitalize;
+}
+
+.weather-widget .info {
+  font-size: .9rem;
+}
+/* ===== AJUSTE MOBILE: empilhar widget do clima ===== */
+@media (max-width: 768px) {
+  .vooavela__content {
+    flex-direction: column;
+    align-items: stretch; /* garante largura cheia */
+  }
+
+  .weather-widget,
+  .vooavela__text {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  /* opcional: clima sempre antes do texto */
+  .weather-widget {
+    order: -1;
+    margin-bottom: 20px;
+  }
+}
+
