@@ -1,6 +1,9 @@
 gsap.fromTo("#plane",
   {x: -200, y: 200, scaleX: 1}, // começa fora da tela à esquerda
+  
   {
+    
+    
     x: window.innerWidth + 140, // atravessa até sumir na direita
     y: 150,
     duration: 6,
